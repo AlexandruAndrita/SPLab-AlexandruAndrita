@@ -6,7 +6,7 @@ class Image(Element):
         self.image_name = image_name
 
     def __repr__(self):
-        return f"Image name: {self.image_name}"
+        return f"Image with name: {self.image_name}"
 
     def print_method(self):
-        print(f"Image name: {self.image_name}")
+        print(f"Image with name: {self.image_name}")

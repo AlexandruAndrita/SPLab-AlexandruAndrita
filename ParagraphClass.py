@@ -6,7 +6,7 @@ class Paragraph(Element):
         self.paragraph_name = paragraph_name
 
     def __repr__(self):
-        return f"Paragraph name: {self.paragraph_name}"
+        return f"Paragraph: {self.paragraph_name}"
 
     def print_method(self):
-        print(f"Paragraph name: {self.paragraph_name}")
+        print(f"Paragraph: {self.paragraph_name}")
