@@ -1,33 +1,39 @@
 from BookClass import Book
-from AuthorClass import Author
 from SectionClass import Section
-from ParagraphClass import Paragraph
-from ImageClass import Image
+from ImageProxyClass import ImageProxy
+import time
 
-noapteBuna = Book("Noapte buna, copii!")
-#author = Author("Radu Pavel Gheo","")
-author = Author("Radu Pavel Gheo")
-noapteBuna.add_author(author)
+startime = time.time()
 
-cap1 = Section("Capitolul 1")
-cap11 = Section("Capitolul 1.1")
-cap111 = Section("Capitolul 1.1.1")
-cap1111 = Section("Subchapter 1.1.1.1")
+img1 = ImageProxy("Pamela Anderson")
+img2 = ImageProxy("Kim Kardashian")
+img3 = ImageProxy("Kirby Griffin")
 
-noapteBuna.add_content(Paragraph("Multumesc celor care ..."))
-noapteBuna.add(cap1)
+playboy1 = Section("Front Cover")
+playboy1.add(img1)
+playboy2 = Section("Summer Girls")
+playboy2.add(img2)
+playboy2.add(img3)
+playboy = Book("Playboy")
+playboy.add_content(playboy1)
+playboy.add_content(playboy2)
 
-cap1.add(Paragraph("Moto capitol"))
-cap1.add(cap11)
+stoptime = time.time()
+
+print(f"Creation of the content book: {stoptime-startime} milliseconds")
+startime = time.time()
+playboy1.print_method()
+stoptime = time.time()
+
+print(f"Printing the section 1 took: {stoptime-startime} milliseconds")
+
+startime = time.time()
+playboy1.print_method()
+stoptime = time.time()
+
+print(f"Printing again the section 1 took: {stoptime-startime} milliseconds")
 
 
-cap11.add(Paragraph("Text from subchapter 1.1"))
-cap11.add(cap111)
-cap111.add(Paragraph("Text from subchapter 1.1.1"))
-cap111.add(cap1111)
-cap1111.add(Image("Image subchapter 1.1.1.1"))
-
-noapteBuna.print_instance()
 
 
 
