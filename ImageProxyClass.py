@@ -9,6 +9,12 @@ class ImageProxy(Element):
 
     def load_image(self):
         real_image = Image(self.url)
+
+        """
+        am returnat aici imaginea reala si nu am salvat-o ca un camp pentru ca in laborator in schema
+        imaginea reala este returnata aici
+        """
+        
         return real_image
 
     def print_method(self):
