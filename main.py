@@ -1,38 +1,34 @@
-from BookClass import Book
+from ParagraphClass import Paragraph
 from SectionClass import Section
-from ImageProxyClass import ImageProxy
-import time
+from AlignLeftClass import AlignLeft
+from AlignRightClass import AlignRight
+from AlignCenterClass import AlignCenter
 
-startime = time.time()
+cap1 = Section("Capitolul 1")
+p1 = Paragraph("Paragraph 1")
+cap1.add(p1)
 
-img1 = ImageProxy("Pamela Anderson")
-img2 = ImageProxy("Kim Kardashian")
-img3 = ImageProxy("Kirby Griffin")
+p2 = Paragraph("Paragraph 2")
+cap1.add(p2)
 
-playboy1 = Section("Front Cover")
-playboy1.add(img1)
-playboy2 = Section("Summer Girls")
-playboy2.add(img2)
-playboy2.add(img3)
-playboy = Book("Playboy")
-playboy.add_content(playboy1)
-playboy.add_content(playboy2)
+p3 = Paragraph("Paragraph 3")
+cap1.add(p3)
 
-stoptime = time.time()
+p4 = Paragraph("Paragraph 4")
+cap1.add(p4)
 
-print(f"Creation of the content book: {stoptime-startime} milliseconds")
-startime = time.time()
-playboy1.print_method()
-stoptime = time.time()
+print("Printing without Alignment")
+print()
+cap1.print_method()
 
-print(f"Printing the section 1 took: {stoptime-startime} milliseconds")
+p1.set_align_strategy(AlignCenter())
+p2.set_align_strategy(AlignRight())
+p3.set_align_strategy(AlignLeft())
 
-startime = time.time()
-playboy1.print_method()
-stoptime = time.time()
-
-print(f"Printing again the section 1 took: {stoptime-startime} milliseconds")
-
+print()
+print("Printing with Alignment")
+print()
+cap1.print_method()
 
 
 
