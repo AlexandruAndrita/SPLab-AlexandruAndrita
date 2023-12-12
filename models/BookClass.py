@@ -1,4 +1,4 @@
-from SectionClass import Section
+from models.SectionClass import Section
 
 
 class Book(Section):

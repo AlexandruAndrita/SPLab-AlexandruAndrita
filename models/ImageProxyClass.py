@@ -1,5 +1,5 @@
-from ElementClass import Element
-from ImageClass import Image
+from models.ElementClass import Element
+from models.ImageClass import Image
 
 
 class ImageProxy(Element):
@@ -20,3 +20,10 @@ class ImageProxy(Element):
     def print_method(self):
         new_image = self.load_image()
         print(new_image)
+
+    def accept(self, visitor):
+        visitor.visit_image_proxy(self)
+
+    def get_image_url(self):
+        return self.url
+

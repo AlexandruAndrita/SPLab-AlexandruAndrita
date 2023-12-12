@@ -1,4 +1,4 @@
-from AlignStrategyClass import AlignStrategy
+from services.AlignStrategyClass import AlignStrategy
 
 
 class AlignRight(AlignStrategy):

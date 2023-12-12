@@ -10,3 +10,6 @@ class Element:
 
     def get(self,index):
         pass
+
+    def accept(self,visitor):
+        pass

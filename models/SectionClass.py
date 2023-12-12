@@ -1,4 +1,4 @@
-from ElementClass import Element
+from models.ElementClass import Element
 
 
 class Section(Element):
@@ -23,8 +23,19 @@ class Section(Element):
     def print_method(self,print_section_name=True):
         if print_section_name:
             print(self.section_name)
-        for i in range(len(self.elements)):
-            self.elements[i].print_method()
+        """
+        commented this loop because otherwise while going through the list of elements in accept
+        the inherited ones (the children) will be printed twice
+        """
+        # for i in range(len(self.elements)):
+            # self.elements[i].print_method()
 
+    def accept(self,visitor):
+        """
+        should be omitted for statistics
+        """
+        visitor.visit_section(self)
 
+        for element in self.elements:
+            element.accept(visitor)
 
